@@ -8,15 +8,24 @@
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+
+    mac-app-util.url = "github:hraban/mac-app-util";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, nix-vscode-extensions, mac-app-util }:
   let
     configuration = { pkgs, ... }: {
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
       environment.systemPackages =
         [ ];
+
+      nixpkgs.overlays = [ nix-vscode-extensions.overlays.default ];
+
+      # Allow non-free software to be installed
+      nixpkgs.config.allowUnfree = true;
 
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
@@ -60,11 +69,15 @@
       modules = [ 
         configuration 
 
+        mac-app-util.darwinModules.default
+
         home-manager.darwinModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.verbose = true;
           home-manager.users.anthony = import ./home.nix;
+
+          home-manager.sharedModules = [ mac-app-util.homeManagerModules.default ];
         }
 
       ];
