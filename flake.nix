@@ -44,6 +44,9 @@
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "aarch64-darwin";
 
+      # Use TouchID for sudo
+      security.pam.enableSudoTouchIdAuth = true;
+
       # Declare the user that will be running 'nix-darwin'.
       users.users.anthony = {
         name = "anthony";
@@ -57,7 +60,15 @@
 
         taps = [];
         brews = [];
-        casks = [];
+        casks = [
+          "visual-studio-code"
+          "ghostty"
+          "discord"
+          "spotify"
+          "tailscale"
+          "notion"
+          "anki"
+        ];
       };
 
     };
