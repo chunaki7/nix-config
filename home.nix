@@ -21,4 +21,27 @@
       
   home.packages = with pkgs; [];
 
+  programs.git = {
+    enable = true;
+    userName = "chunaki7";
+    userEmail = "25187609+chunaki7@users.noreply.github.com";
+    ignores = [ ".DS_Store" ];
+    extraConfig = {
+      init.defaultBranch = "master";
+    };
+  };
+
+  # programs.vscode = {
+  #   enable = true;
+  #   mutableExtensionsDir = false;
+
+  #   userSettings = {
+  #     "workbench.colorTheme" = "Tokyo Night";
+  #   };
+
+  #   extensions = with pkgs.vscode-marketplace; [
+  #     enkia.tokyo-night
+  #     # jnoortheen.nix-ide
+  #   ];
+  # };
 }
