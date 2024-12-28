@@ -47,6 +47,61 @@
       # Use TouchID for sudo
       security.pam.enableSudoTouchIdAuth = true;
 
+      # MacOS Docker auto-hide
+      system.defaults.dock.autohide = true;
+
+      # MacOS hide desktop items
+      system.defaults.WindowManager.StandardHideDesktopIcons = true;
+
+      # MacOS show recent apps on dock
+      system.defaults.dock.show-recents = false;
+
+      # MacOS change speed of showing/hiding dock
+      system.defaults.dock.autohide-time-modifier = 0.2;
+
+      # MacOS show icons on desktop (Finder)
+      system.defaults.finder.CreateDesktop = false;
+
+      # MacOS Default window in Finder
+      system.defaults.finder.NewWindowTarget = "Home";
+
+      # MacOS Show path in Finder
+      system.defaults.finder.ShowPathbar = true;
+
+      # MacOS show CD/DVD etc.. on Desktop
+      system.defaults.finder.ShowRemovableMediaOnDesktop = false;
+
+      # MacOS show prompt when changing file extensions
+      system.defaults.finder.FXEnableExtensionChangeWarning = false;
+
+      # MacOS Delay until Key Repeat (120, 94, 68, 35, 25, 15)
+      system.defaults.NSGlobalDomain.InitialKeyRepeat = 15;
+
+      # MacOS Key repeat rate (120, 90, 60, 30, 12, 6, 2)
+      system.defaults.NSGlobalDomain.KeyRepeat = 2;
+
+      # MacOS enable tap to click ?
+      system.defaults.NSGlobalDomain."com.apple.mouse.tapBehavior" = 1;
+      
+      # Don't know if these even work?
+      system.defaults.screensaver.askForPassword = true;
+      system.defaults.screensaver.askForPasswordDelay = 0;
+
+      system.defaults.CustomUserPreferences = {
+
+        # Safari Preferences
+        "com.apple.Safari" = {
+          ShowFullURLInSmartSearchField = true;
+          ShowFavoritesBar = false;
+          AutoFillFromAddressBook = false;
+          AutoFillCreditCardData = false;
+          AutoFillMiscellaneousForms = false;
+          AutoFillPasswords = false;
+          WarnAboutFraudulentWebsites = true;
+        };
+
+      };
+
       # Declare the user that will be running 'nix-darwin'.
       users.users.anthony = {
         name = "anthony";
