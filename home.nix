@@ -31,6 +31,24 @@
     };
   };
 
+  programs.zsh = {
+    enable = true;
+
+    enableCompletion = true;
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
+
+    shellAliases = {
+      nixswitch = "darwin-rebuild switch --flake ~/.config/nix";
+    };
+
+    oh-my-zsh = {
+      enable = true;
+      plugins = [ "git" "fzf" ];
+      theme = "robbyrussell";
+    };
+  };
+
   # programs.vscode = {
   #   enable = true;
   #   mutableExtensionsDir = false;
