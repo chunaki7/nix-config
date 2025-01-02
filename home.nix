@@ -31,6 +31,15 @@
     };
   };
 
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  programs.bat = {
+    enable = true;
+  };
+
   programs.zsh = {
     enable = true;
 
@@ -40,6 +49,7 @@
 
     shellAliases = {
       nixswitch = "darwin-rebuild switch --flake ~/.config/nix";
+      fzfprev = "fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'";
     };
 
     oh-my-zsh = {

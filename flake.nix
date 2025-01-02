@@ -123,7 +123,21 @@
           "tailscale"
           "notion"
           "anki"
+          "protonvpn"
+          "alt-tab"
+          "docker"
+          "rectangle"
+          "microsoft-office-businesspro"
+          "firefox"
+          "vlc"
         ];
+
+        masApps = {
+          "WindowsApp" = 1295203466;
+          "Kindle" = 302584613;
+          "XCodeGUI" = 497799835;
+        };
+
       };
 
     };
