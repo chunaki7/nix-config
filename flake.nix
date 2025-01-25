@@ -100,6 +100,11 @@
           WarnAboutFraudulentWebsites = true;
         };
 
+        # Don't create DS_Store files on network shares
+        "com.apple.desktopservices" = {
+          DSDontWriteNetworkStores = true;
+        };
+
       };
 
       # Declare the user that will be running 'nix-darwin'.
