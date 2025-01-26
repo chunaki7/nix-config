@@ -59,6 +59,9 @@
       # MacOS change speed of showing/hiding dock
       system.defaults.dock.autohide-time-modifier = 0.2;
 
+      # MacOS change dock autohide delay
+      system.defaults.dock.autohide-delay = 0.0;
+
       # MacOS show icons on desktop (Finder)
       system.defaults.finder.CreateDesktop = false;
 
@@ -137,6 +140,7 @@
           "microsoft-office-businesspro"
           "firefox"
           "vlc"
+          "brave-browser"
         ];
 
         masApps = {
