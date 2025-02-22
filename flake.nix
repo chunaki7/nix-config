@@ -22,6 +22,8 @@
       environment.systemPackages =
         [ ];
 
+      nix.enable = false;
+      
       nixpkgs.overlays = [ nix-vscode-extensions.overlays.default ];
 
       # Allow non-free software to be installed
