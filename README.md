@@ -5,6 +5,8 @@
 sh <(curl -L https://nixos.org/nix/install)
 ```
 
+## Nix Determinate  
+https://docs.determinate.systems/getting-started/individuals/
 
 # Create a Directory for Nix Darwin.
 
@@ -25,7 +27,7 @@ Set the hostname in the `flake.nix` file using the below:
 sed -i '' "s/simple/$(scutil --get LocalHostName)/" flake.nix
 ```
 
-# Install your Nix configuration
+# Install your Nix Darwin configuration
 
 ```
 nix run nix-darwin --extra-experimental-features "nix-command flakes" -- switch --flake ~/.config/nix
@@ -42,6 +44,10 @@ nix flake update
 
 ```
 nixswitch
+```
+or
+```
+darwin-rebuild switch --flake ~/.config/nix
 ```
 
 # References
